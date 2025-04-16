@@ -1,0 +1,167 @@
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+/* List Group Styles */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.list-group-item .fw-bold {
+    color: #2c3e50;
+}
+
+.list-group-item .text-muted {
+    font-size: 0.875rem;
+}
+
+/* Calendar Styles */
+#calendar {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: 600px;
+}
+
+.fc-header-toolbar {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.fc-event {
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 0.85em;
+    cursor: pointer;
+    border: none;
+}
+
+.fc-event-title {
+    padding: 0 2px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 0.85em;
+    padding: 0.5em 0.75em;
+    border-radius: 50px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.badge-L1_PASSED {
+    background-color: #198754;
+    color: white;
+}
+
+.badge-L1_PASSED_WITH_COMMENT {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge-L2_REQUIRED {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.badge-REJECTED {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+    #calendar {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-md-3, .col-md-9 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #calendar {
+        height: 400px;
+    }
+}

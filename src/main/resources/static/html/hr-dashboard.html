@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">IFMS - HR Dashboard</a>
+        <div class="d-flex">
+            <span class="navbar-text me-3">Welcome, <span id="username"></span></span>
+            <a href="/html/login.html?logout=true" class="btn btn-outline-light">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#assignInterviewModal">
+                        Assign Interview
+                    </button>
+                    <a href="/html/all-feedbacks.html" class="btn btn-secondary w-100 mb-2">View Feedback</a>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>Pending Interviews</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group" id="pendingInterviews">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Interview Calendar</h5>
+                </div>
+                <div class="card-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Assign Interview Modal -->
+<div class="modal fade" id="assignInterviewModal" tabindex="-1" aria-labelledby="assignInterviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="assignInterviewModalLabel">Assign New Interview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="assignInterviewForm">
+                    <div class="mb-3">
+                        <label for="candidateName" class="form-label">Candidate Name</label>
+                        <input type="text" class="form-control" id="candidateName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="candidateEmail" class="form-label">Candidate Email</label>
+                        <input type="email" class="form-control" id="candidateEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="interviewer" class="form-label">Interviewer</label>
+                        <select class="form-select" id="interviewer" required>
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="interviewDate" class="form-label">Interview Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="interviewDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="interviewRound" class="form-label">Interview Round</label>
+                        <select class="form-select" id="interviewRound" required>
+                            <option value="L1">L1</option>
+                            <option value="L2">L2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jobRole" class="form-label">Job Role</label>
+                        <input type="text" class="form-control" id="jobRole" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="assignInterviewBtn">Assign Interview</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+<script src="/js/calendar.js"></script>
+<script src="/js/hr-dashboard.js"></script>
+</body>
+</html>
