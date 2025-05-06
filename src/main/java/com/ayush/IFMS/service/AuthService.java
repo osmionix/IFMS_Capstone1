@@ -57,7 +57,7 @@ public class AuthService {
         user.setEmail(authRequest.getEmail());
         user.setPassword(authRequest.getPassword());
         user.setName(authRequest.getName());
-        user.setRole(UserRole.valueOf(authRequest.getRole().toUpperCase()));  // Fixed line
+        user.setRole(UserRole.valueOf(authRequest.getRole().toUpperCase())); 
 
         User savedUser = userRepository.save(user);
 
@@ -71,6 +71,5 @@ public class AuthService {
     }
 
     public void logoutUser(String token) {
-        // Token invalidation logic would go here
     }
 }
