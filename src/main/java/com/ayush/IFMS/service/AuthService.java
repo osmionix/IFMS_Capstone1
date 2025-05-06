@@ -70,6 +70,4 @@ public class AuthService {
         return response;
     }
 
-    public void logoutUser(String token) {
-    }
 }
