@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeAuthForms() {
-//    const loginForm = document.getElementById('loginForm');
-//    if (loginForm) {
-//        loginForm.addEventListener('submit', handleLogin);
-//    }
-
     const signupForm = document.getElementById('signupForm');
     if (signupForm) {
         signupForm.addEventListener('submit', handleSignup);
