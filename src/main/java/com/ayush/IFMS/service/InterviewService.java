@@ -38,11 +38,6 @@ public class InterviewService {
                 .orElseThrow(() -> new RuntimeException("Interview not found"));
     }
 
-//    public List<InterviewDTO> getAllInterviews() {
-//        return interviewRepository.findAll().stream()
-//                .map(this::convertToDTO)
-//                .collect(Collectors.toList());
-//    }
     public List<InterviewDTO> getAllInterviews() {
         List<Interview> interviews = interviewRepository.findAll();
         return interviews.stream()
