@@ -51,13 +51,4 @@ public class SkillEvaluationController {
         List<SkillEvaluationDTO> skills = service.getSkillsByFeedbackId(feedbackId);
         return ResponseEntity.ok(skills);
     }
-
-    private SkillEvaluationDTO convertToDTO(SkillEvaluation skill) {
-        SkillEvaluationDTO dto = new SkillEvaluationDTO();
-        dto.setSkillName(skill.getSkillName());
-        dto.setRating(skill.getRating());
-        dto.setTopics(skill.getTopics());
-        dto.setComments(skill.getComments());
-        return dto;
-    }
 }
