@@ -83,9 +83,6 @@ async function submitFeedback(e) {
         skillEvaluations: skillEvaluations
     };
 
-    // Log the feedbackData to ensure the structure is correct
-    console.log("Submitting feedback:", JSON.stringify(feedbackData, null, 2));
-
     try {
         const token = localStorage.getItem('authToken');
         const response = await fetch('/api/feedback', {
