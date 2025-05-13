@@ -30,7 +30,7 @@ function getUserData() {
 async function loadPendingInterviews() {
     try {
         const userData = getUserData();
-        console.log('User data:', userData); // Debug log
+        console.log('User data:', userData); 
 
         if (!userData.token || !userData.id) {
             throw new Error('Session data missing. Please login again.');
@@ -48,7 +48,7 @@ async function loadPendingInterviews() {
         );
 
         if (!response.ok) {
-            // Handle unauthorized (401) specifically
+            
             if (response.status === 401) {
                 sessionStorage.clear();
                 window.location.href = '/html/login.html';
@@ -58,7 +58,7 @@ async function loadPendingInterviews() {
         }
 
         const interviews = await response.json();
-        console.log('Interviews data:', interviews); // Debug log
+        console.log('Interviews data:', interviews); 
 
         displayPendingInterviews(interviews);
 
