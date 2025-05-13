@@ -25,7 +25,7 @@ async function loadInterviewDetails() {
     try {
         const token = localStorage.getItem('authToken');
 
-        // 1. Fetch interview details
+        // Fetch interview details
         const interviewResponse = await fetch(`/api/interviews/${interviewId}`, {
             headers: token ? { 'Authorization': `Bearer ${token}` } : {}
         });
@@ -52,7 +52,7 @@ async function loadInterviewDetails() {
         document.getElementById('interviewDate').value = formattedDate;
         document.getElementById('interviewRound').value = interviewData.round || 'N/A';
 
-        // 2. Fetch feedback details
+        //Fetch feedback details
         const feedbackResponse = await fetch(`/api/feedback/${interviewId}`, {
             headers: token ? { 'Authorization': `Bearer ${token}` } : {}
         });
@@ -68,7 +68,7 @@ async function loadInterviewDetails() {
             document.getElementById('decision').value = feedbackData.decision || '';
             document.getElementById('overallComments').value = feedbackData.overallComments || '';
 
-            // 3. Fetch skill evaluations
+            //Fetch skill evaluations
             const skillsResponse = await fetch(`/api/skills/by-feedback/${feedbackData.id}`, {
                 headers: token ? { 'Authorization': `Bearer ${token}` } : {}
             });
