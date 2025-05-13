@@ -66,7 +66,7 @@ function showInterviews(interviews) {
     });
 }
 
-// Load all interviewers for dropdown (unchanged)
+// Load all interviewers for dropdown 
 async function loadInterviewers() {
     try {
         const token = sessionStorage.getItem('token');
@@ -88,7 +88,7 @@ async function loadInterviewers() {
     }
 }
 
-// Schedule new interview (unchanged)
+// Schedule new interview
 async function assignInterview() {
     const form = document.getElementById('assignInterviewForm');
 
