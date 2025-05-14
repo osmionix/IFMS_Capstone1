@@ -94,7 +94,7 @@ async function loadInterviewDetails() {
 }
 
 function populateSkillEvaluations(skillsData) {
-    // Map API skill names to our table skill names if needed
+
     const skillNameMap = {
         'BASIC_ALGORITHM': 'basicAlgorithm',
         'CODE_SYNTAX': 'codeAndSyntax',
