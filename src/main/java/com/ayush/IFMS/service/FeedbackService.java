@@ -35,7 +35,7 @@ public class FeedbackService {
                 .orElseThrow(() -> new RuntimeException("Interview not found with ID: " + dto.getInterviewId()));
         feedback.setInterview(interview);
 
-        // Set the interviewer directly from the Interview object (no need for additional query)
+        // Set the interviewer directly from the Interview object
         User interviewer = interview.getInterviewer();  // The interviewer is already set in the interview entity
         feedback.setInterviewer(interviewer);  // Set interviewer to feedback directly
 
@@ -47,9 +47,9 @@ public class FeedbackService {
         // Set other fields
         feedback.setCandidateName(dto.getCandidateName());
         feedback.setCandidateEmail(dto.getCandidateEmail());
-        feedback.setInterviewDate(LocalDateTime.now()); // Current date and time for feedback
+        feedback.setInterviewDate(LocalDateTime.now()); 
         feedback.setJobRole(dto.getJobRole());
-        feedback.setInterviewerEmail(interviewer.getEmail()); // Using interviewer's email from the interview entity
+        feedback.setInterviewerEmail(interviewer.getEmail());
         feedback.setRound(dto.getRound());
         feedback.setDecision(dto.getDecision());
         feedback.setFinalComments(dto.getOverallComments());
@@ -73,7 +73,7 @@ public class FeedbackService {
         interview.setStatus(InterviewStatus.COMPLETED);
         interviewRepository.save(interview);
 
-        dto.setInterviewId(saved.getId());  // Optional: this is actually feedback ID now
+        dto.setInterviewId(saved.getId());  // this is feedback ID
         return dto;
     }
 
@@ -129,7 +129,7 @@ public class FeedbackService {
         Feedback feedback = feedbackRepository.findById(feedbackId)
                 .orElseThrow(() -> new RuntimeException("Feedback not found with ID: " + feedbackId));
 
-        // Use the existing convertToDTO method to transform the entity
+        // Use the convertToDTO method to transform the entity
         FeedbackDTO feedbackDTO = convertToDTO(feedback);
 
         // Ensure the feedback ID is set
