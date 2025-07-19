@@ -1,4 +1,4 @@
-# IFMS_Capstone1
+# IFMS
 Interview Feedback Management System (by Ayush Raj)
 
 ## 📌 Description
